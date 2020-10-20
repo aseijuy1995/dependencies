@@ -1,1 +1,1 @@
-C:\Users\Aker\Desktop\Android\dependencies\buildSrc\build\classes\kotlin\main\Libs.class;C:\Users\Aker\Desktop\Android\dependencies\buildSrc\build\classes\kotlin\main\Versions.class
+C:\Users\Yu-Jie\Desktop\Android\dependencies\buildSrc\build\classes\kotlin\main\Libs.class;C:\Users\Yu-Jie\Desktop\Android\dependencies\buildSrc\build\classes\kotlin\main\Versions.class

@@ -85,4 +85,7 @@ object Versions {
 
     //rxrelay
     const val rxRelay = "3.0.0"
+
+    //mockito
+    const val mockito = "3.3.0"
 }

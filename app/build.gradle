@@ -151,6 +151,8 @@ dependencies {
 //    implementation(Libs.rxPermissionsLib)
     //rxrelay
     implementation(Libs.rxRelayLib)
+    //Test
+    testImplementation(Libs.mockitoLib)
 }
 
 //data store - proto

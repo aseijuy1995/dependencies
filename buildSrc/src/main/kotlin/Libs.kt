@@ -131,4 +131,7 @@ object Libs {
 
     //rxrelay
     const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
+
+    //
+    const val mockitoLib = "org.mockito:mockito-core:${Versions.mockito}"
 }
