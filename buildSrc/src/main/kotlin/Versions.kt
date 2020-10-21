@@ -1,5 +1,19 @@
 object Versions {
-    const val kotlinStd = "1.4.10"
+    const val tools = "4.1.0"
+
+    const val jetBrains = "1.4.10"
+
+    const val android = "1.2.1"
+
+    //constraintLayout
+    const val constraintLayout = "2.0.2"
+
+    //jUnit
+    const val jUnit = "4.+"
+
+    const val jUnitAndroid = "1.1.2"
+
+    const val espresso = "3.3.0"
 
     //ktx
     const val core = "1.3.2"
@@ -18,6 +32,7 @@ object Versions {
     const val dataStore = "1.0.0-alpha02"
 
     //proto
+    const val protobufGradlePlugin = "0.8.13"
     const val proto = "3.10.0"
 
     //fragment

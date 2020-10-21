@@ -1,7 +1,38 @@
 object Libs {
 
+    object ClassPath{
+        const val toolsBuildGradle = "com.android.tools.build:gradle:${Versions.tools}"
+        const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.jetBrains}"
+        const val protobufGradlePlugin = "com.google.protobuf:protobuf-gradle-plugin:${Versions.protobufGradlePlugin}"
+    }
+
+    object Plugins {
+        const val application = "com.android.application"
+        const val android = "android"
+
+        //data store - proto
+        const val protobuf = "com.google.protobuf"
+
+        //data binding kapt
+        const val kapt = "kapt"
+        const val extensions = "android.extensions"
+    }
+
     //jetBrains
-    const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinStd}"
+    const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.jetBrains}"
+
+    const val materialLib = "com.google.android.material:material:${Versions.android}"
+
+    //constraintLayout
+    const val constraintLayoutLib = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    //jUnit
+    const val jUnitLib = "junit:junit:${Versions.jUnit}"
+
+    //jUnit Android
+    const val jUnitAndroidLib = "androidx.test.ext:junit:${Versions.jUnitAndroid}"
+
+    const val espressoLib = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
     //ktx
     const val coreLib = "androidx.core:core-ktx:${Versions.core}"
@@ -23,6 +54,7 @@ object Libs {
 
     //proto
     const val protoLib = "com.google.protobuf:protobuf-javalite:${Versions.proto}"
+    const val protobufLib = "com.google.protobuf:protoc:${Versions.proto}"
 
     //fragment
     const val fragmentKtxLib = "androidx.fragment:fragment-ktx:${Versions.fragment}"
@@ -132,6 +164,7 @@ object Libs {
     //rxrelay
     const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
 
-    //
+    //mock
     const val mockitoLib = "org.mockito:mockito-core:${Versions.mockito}"
+
 }

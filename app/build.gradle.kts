@@ -1,55 +1,55 @@
+import com.google.protobuf.gradle.builtins
+import com.google.protobuf.gradle.generateProtoTasks
+import com.google.protobuf.gradle.id
+import com.google.protobuf.gradle.protoc
+
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    //data store - proto
-    id 'com.google.protobuf'
-    //data binding kapt
-    id 'kotlin-kapt'
-//    id 'kotlin-android-extensions'
+    id(Libs.Plugins.application)
+    kotlin(Libs.Plugins.android)
+    id(Libs.Plugins.protobuf)
+    kotlin(Libs.Plugins.kapt)
+    kotlin(Libs.Plugins.extensions)
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion(App.compileSdk)
+    buildToolsVersion(App.buildTools)
 
     defaultConfig {
-        applicationId "edu.yujie.dependencies"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true//method count > 65536
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId = App.ID
+        minSdkVersion(App.minSdk)
+        targetSdkVersion(App.targetSdk)
+        versionCode = App.versionCode
+        versionName = App.versionName
+        multiDexEnabled = App.isMultiDex//method count > 65536
+        testInstrumentationRunner = App.testInstrumentationRunner
     }
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName(App.Release.name) {
+            isMinifyEnabled = App.Release.isMinify
+            proguardFiles(getDefaultProguardFile(App.Release.proguardFileName), App.Release.proguardFile)
         }
     }
     buildFeatures {
-        //databinding
-        dataBinding true
-        //viewBinding
-        viewBinding true
+        dataBinding = App.isSupportDataBinding
+        viewBinding = App.isSupportViewBinding
     }
-    //java8
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
     implementation(Libs.kotlinStdLib)
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation(Libs.materialLib)
+    implementation(Libs.constraintLayoutLib)
+    testImplementation(Libs.jUnitLib)
+    androidTestImplementation(Libs.jUnitAndroidLib)
+    androidTestImplementation(Libs.espressoLib)
     //ktx
     implementation(Libs.coreLib)
     implementation(Libs.collectionLib)
@@ -159,17 +159,35 @@ dependencies {
 // Generates the java Protobuf-lite code for the Protobufs in this project. See
 // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
 // for more information.
-protobuf {
+
+//Kotlin
+protobuf.protobuf.run {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.10.0"
+        artifact = Libs.protobufLib
     }
     generateProtoTasks {
-        all().each { task ->
-            task.builtins {
+        all().forEach {
+            it.builtins {
                 java {
-                    option 'lite'
+                    id("lite")
                 }
             }
         }
     }
 }
+
+//Groovy
+//protobuf {
+//    protoc {
+//        artifact = "com.google.protobuf:protoc:3.10.0"
+//    }
+//    generateProtoTasks {
+//        all().each { task ->
+//            task.builtins {
+//                java {
+//                    option 'lite'
+//                }
+//            }
+//        }
+//    }
+//}
