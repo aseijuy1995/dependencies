@@ -153,6 +153,11 @@ dependencies {
     implementation(Libs.rxRelayLib)
     //Test
     testImplementation(Libs.mockitoLib)
+    //Tools
+    /**
+     *  https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
+     * */
+    implementation("com.facebook.stetho:stetho:1.5.1")//sqlite tool
 }
 
 //data store - proto
