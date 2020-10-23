@@ -41,6 +41,12 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    //test
+    testOptions{
+        unitTests{
+            isIncludeAndroidResources = App.isIncludeAndroidResources
+        }
+    }
 }
 
 dependencies {
