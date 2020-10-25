@@ -4,10 +4,10 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath(Libs.ClassPath.toolsBuildGradle)
-        classpath(Libs.ClassPath.kotlinGradlePlugin)
+        classpath(ClassPath.tools)
+        classpath(ClassPath.kotlin)
         //data store - proto
-        classpath(Libs.ClassPath.protobufGradlePlugin)
+        classpath(ClassPath.protobuf)
     }
 }
 

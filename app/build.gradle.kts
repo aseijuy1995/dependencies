@@ -4,35 +4,35 @@ import com.google.protobuf.gradle.id
 import com.google.protobuf.gradle.protoc
 
 plugins {
-    id(Libs.Plugins.application)
-    kotlin(Libs.Plugins.android)
-    id(Libs.Plugins.protobuf)
-    kotlin(Libs.Plugins.kapt)
-    kotlin(Libs.Plugins.extensions)
+    id(Plugins.application)
+    kotlin(Plugins.Kotlin.android)
+    id(Plugins.protobuf)
+    kotlin(Plugins.Kotlin.kapt)
+    kotlin(Plugins.Kotlin.extensions)
 }
 
 android {
-    compileSdkVersion(App.compileSdk)
-    buildToolsVersion(App.buildTools)
+    compileSdkVersion(Android.compileSdk)
+    buildToolsVersion(Android.buildTools)
 
     defaultConfig {
-        applicationId = App.ID
-        minSdkVersion(App.minSdk)
-        targetSdkVersion(App.targetSdk)
-        versionCode = App.versionCode
-        versionName = App.versionName
-        multiDexEnabled = App.isMultiDex//method count > 65536
-        testInstrumentationRunner = App.testInstrumentationRunner
+        applicationId = Android.ID
+        minSdkVersion(Android.minSdk)
+        targetSdkVersion(Android.targetSdk)
+        versionCode = Android.versionCode
+        versionName = Android.versionName
+        multiDexEnabled = Android.isMultiDex//method count > 65536
+        testInstrumentationRunner = Android.testInstrumentationRunner
     }
     buildTypes {
-        getByName(App.Release.name) {
-            isMinifyEnabled = App.Release.isMinify
-            proguardFiles(getDefaultProguardFile(App.Release.proguardFileName), App.Release.proguardFile)
+        getByName(Android.Release.name) {
+            isMinifyEnabled = Android.Release.isMinify
+            proguardFiles(getDefaultProguardFile(Android.Release.proguardFileName), Android.Release.proguardFile)
         }
     }
     buildFeatures {
-        dataBinding = App.isSupportDataBinding
-        viewBinding = App.isSupportViewBinding
+        dataBinding = Android.isSupportDataBinding
+        viewBinding = Android.isSupportViewBinding
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,113 +44,113 @@ android {
 }
 
 dependencies {
-    implementation(Libs.kotlinStdLib)
+    implementation(Libs.Jetbrains.kotlinStdLib)
     implementation(Libs.materialLib)
-    implementation(Libs.constraintLayoutLib)
+    implementation(Libs.AndroidX.constraintLayoutLib)
     testImplementation(Libs.jUnitLib)
-    androidTestImplementation(Libs.jUnitAndroidLib)
-    androidTestImplementation(Libs.espressoLib)
+    androidTestImplementation(Libs.AndroidX.jUnitAndroidLib)
+    androidTestImplementation(Libs.AndroidX.espressoLib)
     //ktx
-    implementation(Libs.coreLib)
-    implementation(Libs.collectionLib)
+    implementation(Libs.AndroidX.coreLib)
+    implementation(Libs.AndroidX.collectionLib)
     //activity
-    implementation(Libs.activityKtxLib)
+    implementation(Libs.AndroidX.activityKtxLib)
     //appcompat
-    implementation(Libs.appcompatLib)
-    implementation(Libs.appcompatResourcesLib)
+    implementation(Libs.AndroidX.appcompatLib)
+    implementation(Libs.AndroidX.appcompatResourcesLib)
     //app start up
-    implementation(Libs.appStartUpLib)
+    implementation(Libs.AndroidX.appStartUpLib)
     //data store
-    implementation(Libs.dataStorePrefLib)
-    implementation(Libs.dataStoreCoreLib)
+    implementation(Libs.AndroidX.dataStorePrefLib)
+    implementation(Libs.AndroidX.dataStoreCoreLib)
     //proto
-    implementation(Libs.protoLib)
+    implementation(Libs.ProtoBuf.protoLib)
     //fragment
-    implementation(Libs.fragmentKtxLib)
-    debugImplementation(Libs.fragmentTestingLib)
+    implementation(Libs.AndroidX.fragmentKtxLib)
+    debugImplementation(Libs.AndroidX.fragmentTestingLib)
     //lifecycle
-    implementation(Libs.viewModelKtxLib)
-    implementation(Libs.liveDataKtxLib)
-    implementation(Libs.lifecycleRuntimeLib)
-    implementation(Libs.lifecycleCommonLib)
-    implementation(Libs.viewModelSavedStateLib)
-    implementation(Libs.lifecycleServiceLib)
-    implementation(Libs.lifecycleProcessLib)
-    implementation(Libs.lifecycleReactiveStreamsLib)
+    implementation(Libs.AndroidX.viewModelKtxLib)
+    implementation(Libs.AndroidX.liveDataKtxLib)
+    implementation(Libs.AndroidX.lifecycleRuntimeLib)
+    implementation(Libs.AndroidX.lifecycleCommonLib)
+    implementation(Libs.AndroidX.viewModelSavedStateLib)
+    implementation(Libs.AndroidX.lifecycleServiceLib)
+    implementation(Libs.AndroidX.lifecycleProcessLib)
+    implementation(Libs.AndroidX.lifecycleReactiveStreamsLib)
     //navigation
-    implementation(Libs.navRuntimeKtxLib)
-    implementation(Libs.navFragmentKtxLib)
-    implementation(Libs.navUiKtxLib)
-    implementation(Libs.navDynamicFeaturesFragmentLib)
-    androidTestImplementation(Libs.navTestingLib)
+    implementation(Libs.AndroidX.navRuntimeKtxLib)
+    implementation(Libs.AndroidX.navFragmentKtxLib)
+    implementation(Libs.AndroidX.navUiKtxLib)
+    implementation(Libs.AndroidX.navDynamicFeaturesFragmentLib)
+    androidTestImplementation(Libs.AndroidX.navTestingLib)
     //paging
-    implementation(Libs.pagingRuntimeKtxLib)
-    testImplementation(Libs.pagingCommonKtxLib)
+    implementation(Libs.AndroidX.pagingRuntimeKtxLib)
+    testImplementation(Libs.AndroidX.pagingCommonKtxLib)
 //    implementation(Libs.pagingGuavaLib)
     //room
-    implementation(Libs.roomRuntimeLib)
-    implementation(Libs.roomKtxLib)
-//    implementation(Libs.roomCoroutinesLib)
-    kapt(Libs.roomCompilerLib)
-    testImplementation(Libs.roomTestingLib)
+    implementation(Libs.AndroidX.roomRuntimeLib)
+    implementation(Libs.AndroidX.roomKtxLib)
+//    implementation(Libs.AndroidX.roomCoroutinesLib)
+    kapt(Libs.AndroidX.roomCompilerLib)
+    testImplementation(Libs.AndroidX.roomTestingLib)
     //work manager
-    implementation(Libs.workRunTimeKtxLib)
-    androidTestImplementation(Libs.workRunTimeKtxLib)
+    implementation(Libs.AndroidX.workRunTimeKtxLib)
+    androidTestImplementation(Libs.AndroidX.workRunTimeKtxLib)
     //palette
-    implementation(Libs.paletteKtxLib)
+    implementation(Libs.AndroidX.paletteKtxLib)
     //sqlite
-    implementation(Libs.sqLiteKtxLib)
+    implementation(Libs.AndroidX.sqLiteKtxLib)
     //coroutines
-    implementation(Libs.coroutinesCoreLib)
-    implementation(Libs.coroutinesAndroidLib)
-    testImplementation(Libs.coroutinesTestingLib)
+    implementation(Libs.Jetbrains.coroutinesCoreLib)
+    implementation(Libs.Jetbrains.coroutinesAndroidLib)
+    testImplementation(Libs.Jetbrains.coroutinesTestingLib)
     //okhttp3
-    implementation(Libs.okHttpLib)
-    implementation(Libs.okHttpMockWebServerLib)
-    implementation(Libs.okHttpLoggingInterceptorLib)
-    testImplementation(Libs.okHttpMockWebServerTestingLib)
+    implementation(Libs.Squareup.okHttpLib)
+    implementation(Libs.Squareup.okHttpMockWebServerLib)
+    implementation(Libs.Squareup.okHttpLoggingInterceptorLib)
+    testImplementation(Libs.Squareup.okHttpMockWebServerTestingLib)
     //okio
-    implementation(Libs.okioLib)
+    implementation(Libs.Squareup.okioLib)
     //retrofit
-    implementation(Libs.retrofitLib)
-    implementation(Libs.retrofitConverterGsonLib)
-    implementation(Libs.retrofitMockLib)
+    implementation(Libs.Squareup.retrofitLib)
+    implementation(Libs.Squareup.retrofitConverterGsonLib)
+    implementation(Libs.Squareup.retrofitMockLib)
     //gson
     implementation(Libs.gsonLib)
     //koin
-    implementation(Libs.koinCoreLib)
-    implementation(Libs.koinCoreExtLib)
-    implementation(Libs.koinScopeLib)
-    implementation(Libs.koinViewModelLib)
-    implementation(Libs.koinFragmentLib)
-    testImplementation(Libs.koinTestingLib)
+    implementation(Libs.Koin.koinCoreLib)
+    implementation(Libs.Koin.koinCoreExtLib)
+    implementation(Libs.Koin.koinScopeLib)
+    implementation(Libs.Koin.koinViewModelLib)
+    implementation(Libs.Koin.koinFragmentLib)
+    testImplementation(Libs.Koin.koinTestingLib)
     //glide
-    implementation(Libs.glideLib)
-    implementation(Libs.glideOkHttpIntegrationLib)
-    kapt(Libs.glideCompilerLib)
+    implementation(Libs.BumpTech.glideLib)
+    implementation(Libs.BumpTech.glideOkHttpIntegrationLib)
+    kapt(Libs.BumpTech.glideCompilerLib)
     //logger
     implementation(Libs.loggerLib)
     //rx java
-    implementation(Libs.rxJavaLib)
+    implementation(Libs.ReactiveX.rxJavaLib)
     //rx android
-    implementation(Libs.rxAndroidLib)
+    implementation(Libs.ReactiveX.rxAndroidLib)
     //rxkotlin
-    implementation(Libs.rxKotlinLib)
+    implementation(Libs.ReactiveX.rxKotlinLib)
     //rxbinding
-    implementation(Libs.rxBindingLib)
-    implementation(Libs.rxBindingCoreLib)
-    implementation(Libs.rxBindingAppcompatLib)
-    implementation(Libs.rxBindingDrawerLayoutLib)
-//    implementation(Libs.rxBindingLeanbackLib)//min17
-    implementation(Libs.rxBindingRecyclerViewLib)
-    implementation(Libs.rxBindingSlidingPaneLayoutLib)
-    implementation(Libs.rxBindingSwipereFreshLayoutLib)
-    implementation(Libs.rxBindingViewPagerLib)
-    implementation(Libs.rxBindingViewPager2Lib)
+    implementation(Libs.Jakewharton.rxBindingLib)
+    implementation(Libs.Jakewharton.rxBindingCoreLib)
+    implementation(Libs.Jakewharton.rxBindingAppcompatLib)
+    implementation(Libs.Jakewharton.rxBindingDrawerLayoutLib)
+//    implementation(Libs.Jakewharton.rxBindingLeanbackLib)//min17
+    implementation(Libs.Jakewharton.rxBindingRecyclerViewLib)
+    implementation(Libs.Jakewharton.rxBindingSlidingPaneLayoutLib)
+    implementation(Libs.Jakewharton.rxBindingSwipereFreshLayoutLib)
+    implementation(Libs.Jakewharton.rxBindingViewPagerLib)
+    implementation(Libs.Jakewharton.rxBindingViewPager2Lib)
     //rx permission
 //    implementation(Libs.rxPermissionsLib)
     //rxrelay
-    implementation(Libs.rxRelayLib)
+    implementation(Libs.Jakewharton.rxRelayLib)
     //Test
     testImplementation(Libs.mockitoLib)
 }
@@ -163,7 +163,7 @@ dependencies {
 //Kotlin
 protobuf.protobuf.run {
     protoc {
-        artifact = Libs.protobufLib
+        artifact = Libs.ProtoBuf.protobufLib
     }
     generateProtoTasks {
         all().forEach {

@@ -1,0 +1,20 @@
+/**
+ * @author YuJie on 2020/10/22
+ * @describe 說明
+ * @param 參數
+ */
+
+object Plugins {
+    const val application = "com.android.application"
+
+    //data store - proto
+    const val protobuf = "com.google.protobuf"
+
+    object Kotlin {
+        const val android = "android"
+
+        //data binding kapt
+        const val kapt = "kapt"
+        const val extensions = "android.extensions"
+    }
+}

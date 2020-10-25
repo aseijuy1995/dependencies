@@ -1,4 +1,4 @@
-object App {
+object Android {
 
     const val compileSdk = 30
     const val buildTools = "29.0.3"
