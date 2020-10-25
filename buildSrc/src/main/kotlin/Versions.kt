@@ -103,4 +103,13 @@ object Versions {
 
     //mockito
     const val mockito = "3.3.0"
+
+    //hilt
+    const val hilt = "2.28.3-alpha"
+
+    const val hiltInject = "1.0.0-alpha02"
+
+    //stetho
+    const val stetho = "1.5.1"
+
 }

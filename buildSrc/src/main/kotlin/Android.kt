@@ -23,4 +23,7 @@ object Android {
     const val isSupportDataBinding = true
     //viewBinding
     const val isSupportViewBinding = true
+
+    //test
+    const val isIncludeAndroidResources = true
 }

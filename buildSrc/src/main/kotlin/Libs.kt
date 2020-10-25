@@ -70,18 +70,32 @@ object Libs {
 
         //sqlite
         const val sqLiteKtxLib = "androidx.sqlite:sqlite-ktx:${Versions.sqlite}"
+
+        //hilt
+        const val hiltViewModelLib = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltInject}"
+        const val hiltWorkManagerLib = "androidx.hilt:hilt-work:${Versions.hiltInject}"
+        const val hiltCompilerLib = "androidx.hilt:hilt-compiler:${Versions.hiltInject}"
+
     }
 
-    const val materialLib = "com.google.android.material:material:${Versions.android}"
-
-    //jUnit
-    const val jUnitLib = "junit:junit:${Versions.jUnit}"
-
-    object ProtoBuf{
+    object Google{
         //proto
         const val protoLib = "com.google.protobuf:protobuf-javalite:${Versions.proto}"
         const val protobufLib = "com.google.protobuf:protoc:${Versions.proto}"
+
+        //hilt
+        const val hiltLib = "com.google.dagger:hilt-android:${Versions.hilt}"
+        const val hiltCompilerLib = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+
+        //material
+        const val materialLib = "com.google.android.material:material:${Versions.android}"
+
+        //gson
+        const val gsonLib = "com.google.code.gson:gson:${Versions.gson}"
     }
+
+    //jUnit
+    const val jUnitLib = "junit:junit:${Versions.jUnit}"
 
     object Jetbrains {
         //jetBrains
@@ -109,9 +123,6 @@ object Libs {
         const val retrofitMockLib = "com.squareup.retrofit2:retrofit-mock:${Versions.retrofit}"
     }
 
-    //gson
-    const val gsonLib = "com.google.code.gson:gson:${Versions.gson}"
-
     object Koin {
         //koin
         const val koinCoreLib = "org.koin:koin-core:${Versions.koin}"
@@ -121,7 +132,6 @@ object Libs {
         const val koinFragmentLib = "org.koin:koin-androidx-fragment:${Versions.koin}"
         const val koinTestingLib = "org.koin:koin-test:${Versions.koin}"
     }
-
 
     object BumpTech {
         //glide
@@ -162,11 +172,14 @@ object Libs {
         const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
     }
 
-
     //rx permission
     const val rxPermissionsLib = "com.github.tbruyelle:rxpermissions:${Versions.rxPermissions}"
 
     //mock
     const val mockitoLib = "org.mockito:mockito-core:${Versions.mockito}"
+
+    object Tool{
+        const val stethoLib = "com.facebook.stetho:stetho:${Versions.stetho}"
+    }
 
 }

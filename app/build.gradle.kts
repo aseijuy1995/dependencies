@@ -41,11 +41,17 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    //test
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = Android.isIncludeAndroidResources
+        }
+    }
 }
 
 dependencies {
     implementation(Libs.Jetbrains.kotlinStdLib)
-    implementation(Libs.materialLib)
+    implementation(Libs.Google.materialLib)
     implementation(Libs.AndroidX.constraintLayoutLib)
     testImplementation(Libs.jUnitLib)
     androidTestImplementation(Libs.AndroidX.jUnitAndroidLib)
@@ -64,7 +70,7 @@ dependencies {
     implementation(Libs.AndroidX.dataStorePrefLib)
     implementation(Libs.AndroidX.dataStoreCoreLib)
     //proto
-    implementation(Libs.ProtoBuf.protoLib)
+    implementation(Libs.Google.protoLib)
     //fragment
     implementation(Libs.AndroidX.fragmentKtxLib)
     debugImplementation(Libs.AndroidX.fragmentTestingLib)
@@ -116,7 +122,7 @@ dependencies {
     implementation(Libs.Squareup.retrofitConverterGsonLib)
     implementation(Libs.Squareup.retrofitMockLib)
     //gson
-    implementation(Libs.gsonLib)
+    implementation(Libs.Google.gsonLib)
     //koin
     implementation(Libs.Koin.koinCoreLib)
     implementation(Libs.Koin.koinCoreExtLib)
@@ -153,6 +159,15 @@ dependencies {
     implementation(Libs.Jakewharton.rxRelayLib)
     //Test
     testImplementation(Libs.mockitoLib)
+    //hilt
+    implementation(Libs.Google.hiltLib)
+    kapt(Libs.Google.hiltCompilerLib)
+    //hilt - viewModel & workManager
+    implementation(Libs.AndroidX.hiltViewModelLib)
+    implementation(Libs.AndroidX.hiltWorkManagerLib)
+    kapt(Libs.AndroidX.hiltCompilerLib)
+    //Tools
+    implementation(Libs.Tool.stethoLib)//https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
 }
 
 //data store - proto
@@ -163,7 +178,7 @@ dependencies {
 //Kotlin
 protobuf.protobuf.run {
     protoc {
-        artifact = Libs.ProtoBuf.protobufLib
+        artifact = Libs.Google.protobufLib
     }
     generateProtoTasks {
         all().forEach {
