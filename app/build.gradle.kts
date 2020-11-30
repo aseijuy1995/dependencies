@@ -6,7 +6,7 @@ import com.google.protobuf.gradle.protoc
 plugins {
     id(Plugins.application)
     kotlin(Plugins.Kotlin.android)
-    id(Plugins.protobuf)
+    id(Plugins.protoBuf)
     kotlin(Plugins.Kotlin.kapt)
     kotlin(Plugins.Kotlin.extensions)
 }
@@ -16,13 +16,13 @@ android {
     buildToolsVersion(Android.buildTools)
 
     defaultConfig {
-        applicationId = Android.ID
-        minSdkVersion(Android.minSdk)
-        targetSdkVersion(Android.targetSdk)
-        versionCode = Android.versionCode
-        versionName = Android.versionName
-        multiDexEnabled = Android.isMultiDex//method count > 65536
-        testInstrumentationRunner = Android.testInstrumentationRunner
+        applicationId = Android.DefaultConfig.ID
+        minSdkVersion(Android.DefaultConfig.minSdk)
+        targetSdkVersion(Android.DefaultConfig.targetSdk)
+        versionCode = Android.DefaultConfig.versionCode
+        versionName = Android.DefaultConfig.versionName
+        multiDexEnabled = Android.DefaultConfig.isMultiDex
+        testInstrumentationRunner = Android.DefaultConfig.testInstrumentationRunner
     }
     buildTypes {
         getByName(Android.Release.name) {
@@ -50,30 +50,39 @@ android {
 }
 
 dependencies {
+    //Jetbrains
     implementation(Libs.Jetbrains.kotlinStdLib)
+    //coroutines
+    implementation(Libs.Jetbrains.coroutinesCoreLib)
+    implementation(Libs.Jetbrains.coroutinesAndroidLib)
+    //Google
     implementation(Libs.Google.materialLib)
-    implementation(Libs.AndroidX.constraintLayoutLib)
-    testImplementation(Libs.jUnitLib)
-    androidTestImplementation(Libs.AndroidX.jUnitAndroidLib)
-    androidTestImplementation(Libs.AndroidX.espressoLib)
+    //gson
+    implementation(Libs.Google.gsonLib)
+    //proto
+    implementation(Libs.Google.protoLib)
+    //hilt
+    implementation(Libs.Google.hiltLib)
+    kapt(Libs.Google.hiltCompilerLib)
+    //AndroidX
     //ktx
     implementation(Libs.AndroidX.coreLib)
     implementation(Libs.AndroidX.collectionLib)
-    //activity
-    implementation(Libs.AndroidX.activityKtxLib)
+    implementation(Libs.AndroidX.paletteKtxLib)
+    implementation(Libs.AndroidX.sqLiteKtxLib)
     //appcompat
     implementation(Libs.AndroidX.appcompatLib)
     implementation(Libs.AndroidX.appcompatResourcesLib)
+    //activity
+    implementation(Libs.AndroidX.activityKtxLib)
+    //fragment
+    implementation(Libs.AndroidX.fragmentKtxLib)
+    debugImplementation(Libs.AndroidX.fragmentTestingLib)
     //app start up
     implementation(Libs.AndroidX.appStartUpLib)
     //data store
     implementation(Libs.AndroidX.dataStorePrefLib)
     implementation(Libs.AndroidX.dataStoreCoreLib)
-    //proto
-    implementation(Libs.Google.protoLib)
-    //fragment
-    implementation(Libs.AndroidX.fragmentKtxLib)
-    debugImplementation(Libs.AndroidX.fragmentTestingLib)
     //lifecycle
     implementation(Libs.AndroidX.viewModelKtxLib)
     implementation(Libs.AndroidX.liveDataKtxLib)
@@ -83,66 +92,55 @@ dependencies {
     implementation(Libs.AndroidX.lifecycleServiceLib)
     implementation(Libs.AndroidX.lifecycleProcessLib)
     implementation(Libs.AndroidX.lifecycleReactiveStreamsLib)
-    //navigation
-    implementation(Libs.AndroidX.navRuntimeKtxLib)
-    implementation(Libs.AndroidX.navFragmentKtxLib)
-    implementation(Libs.AndroidX.navUiKtxLib)
-    implementation(Libs.AndroidX.navDynamicFeaturesFragmentLib)
-    androidTestImplementation(Libs.AndroidX.navTestingLib)
     //paging
     implementation(Libs.AndroidX.pagingRuntimeKtxLib)
-    testImplementation(Libs.AndroidX.pagingCommonKtxLib)
 //    implementation(Libs.pagingGuavaLib)
     //room
     implementation(Libs.AndroidX.roomRuntimeLib)
     implementation(Libs.AndroidX.roomKtxLib)
 //    implementation(Libs.AndroidX.roomCoroutinesLib)
     kapt(Libs.AndroidX.roomCompilerLib)
-    testImplementation(Libs.AndroidX.roomTestingLib)
     //work manager
     implementation(Libs.AndroidX.workRunTimeKtxLib)
-    androidTestImplementation(Libs.AndroidX.workRunTimeKtxLib)
-    //palette
-    implementation(Libs.AndroidX.paletteKtxLib)
-    //sqlite
-    implementation(Libs.AndroidX.sqLiteKtxLib)
-    //coroutines
-    implementation(Libs.Jetbrains.coroutinesCoreLib)
-    implementation(Libs.Jetbrains.coroutinesAndroidLib)
-    testImplementation(Libs.Jetbrains.coroutinesTestingLib)
+    //navigation
+    implementation(Libs.AndroidX.navRuntimeKtxLib)
+    implementation(Libs.AndroidX.navFragmentKtxLib)
+    implementation(Libs.AndroidX.navUiKtxLib)
+    implementation(Libs.AndroidX.navDynamicFeaturesFragmentLib)
+    //hilt - viewModel & workManager
+    implementation(Libs.AndroidX.hiltViewModelLib)
+    implementation(Libs.AndroidX.hiltWorkManagerLib)
+    kapt(Libs.AndroidX.hiltCompilerLib)
+    //constraintLayout
+    implementation(Libs.AndroidX.constraintLayoutLib)
+    //Squareup
     //okhttp3
     implementation(Libs.Squareup.okHttpLib)
     implementation(Libs.Squareup.okHttpMockWebServerLib)
     implementation(Libs.Squareup.okHttpLoggingInterceptorLib)
-    testImplementation(Libs.Squareup.okHttpMockWebServerTestingLib)
     //okio
     implementation(Libs.Squareup.okioLib)
     //retrofit
     implementation(Libs.Squareup.retrofitLib)
     implementation(Libs.Squareup.retrofitConverterGsonLib)
     implementation(Libs.Squareup.retrofitMockLib)
-    //gson
-    implementation(Libs.Google.gsonLib)
-    //koin
+    //Koin
     implementation(Libs.Koin.koinCoreLib)
     implementation(Libs.Koin.koinCoreExtLib)
     implementation(Libs.Koin.koinScopeLib)
     implementation(Libs.Koin.koinViewModelLib)
     implementation(Libs.Koin.koinFragmentLib)
-    testImplementation(Libs.Koin.koinTestingLib)
-    //glide
+    //BumpTech
     implementation(Libs.BumpTech.glideLib)
     implementation(Libs.BumpTech.glideOkHttpIntegrationLib)
     kapt(Libs.BumpTech.glideCompilerLib)
-    //logger
-    implementation(Libs.loggerLib)
-    //rx java
+    //RxJava
     implementation(Libs.ReactiveX.rxJavaLib)
-    //rx android
+    //RxAndroid
     implementation(Libs.ReactiveX.rxAndroidLib)
-    //rxkotlin
+    //RxKotlin
     implementation(Libs.ReactiveX.rxKotlinLib)
-    //rxbinding
+    //RxBinding
     implementation(Libs.Jakewharton.rxBindingLib)
     implementation(Libs.Jakewharton.rxBindingCoreLib)
     implementation(Libs.Jakewharton.rxBindingAppcompatLib)
@@ -153,21 +151,29 @@ dependencies {
     implementation(Libs.Jakewharton.rxBindingSwipereFreshLayoutLib)
     implementation(Libs.Jakewharton.rxBindingViewPagerLib)
     implementation(Libs.Jakewharton.rxBindingViewPager2Lib)
-    //rx permission
-//    implementation(Libs.rxPermissionsLib)
-    //rxrelay
+    //RxRelay
     implementation(Libs.Jakewharton.rxRelayLib)
+    //logger
+    implementation(Libs.loggerLib)
+    //RxPermission
+//    implementation(Libs.rxPermissionsLib)
+    //Facebook
+    implementation(Libs.Facebook.stethoLib)//https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
     //Test
-    testImplementation(Libs.mockitoLib)
-    //hilt
-    implementation(Libs.Google.hiltLib)
-    kapt(Libs.Google.hiltCompilerLib)
-    //hilt - viewModel & workManager
-    implementation(Libs.AndroidX.hiltViewModelLib)
-    implementation(Libs.AndroidX.hiltWorkManagerLib)
-    kapt(Libs.AndroidX.hiltCompilerLib)
-    //Tools
-    implementation(Libs.Tool.stethoLib)//https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
+    testImplementation(Libs.Test.jUnitLib)
+    testImplementation(Libs.Test.mockitoLib)
+    testImplementation(Libs.Test.coroutinesTestingLib)
+    testImplementation(Libs.Test.pagingCommonKtxLib)
+    testImplementation(Libs.Test.roomTestingLib)
+    testImplementation(Libs.Test.okHttpMockWebServerTestingLib)
+    testImplementation(Libs.Test.koinTestingLib)
+
+    //AndroidTest
+    androidTestImplementation(Libs.AndroidTest.jUnitAndroidLib)
+    androidTestImplementation(Libs.AndroidTest.espressoLib)
+    androidTestImplementation(Libs.AndroidTest.workTestingKtxLib)
+    androidTestImplementation(Libs.AndroidTest.navTestingLib)
+
 }
 
 //data store - proto

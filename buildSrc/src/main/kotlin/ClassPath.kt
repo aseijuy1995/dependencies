@@ -8,5 +8,5 @@ object ClassPath {
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.jetBrains}"
 
     //data store - proto
-    const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:${Versions.protobufGradlePlugin}"
+    const val protobuf = "com.google.protobuf:protobuf-gradle-plugin:${Versions.protoBufGradlePlugin}"
 }

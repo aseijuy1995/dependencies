@@ -1,25 +1,47 @@
 object Libs {
 
+    object Jetbrains {
+        const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.jetBrains}"
+
+        //coroutines
+        const val coroutinesCoreLib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+        const val coroutinesAndroidLib = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
+    }
+
+    object Google {
+        //material
+        const val materialLib = "com.google.android.material:material:${Versions.android}"
+
+        //gson
+        const val gsonLib = "com.google.code.gson:gson:${Versions.gson}"
+
+        //proto
+        const val protoLib = "com.google.protobuf:protobuf-javalite:${Versions.proto}"
+        const val protobufLib = "com.google.protobuf:protoc:${Versions.proto}"
+
+        //hilt
+        const val hiltLib = "com.google.dagger:hilt-android:${Versions.hilt}"
+        const val hiltCompilerLib = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    }
+
     object AndroidX {
-        //constraintLayout
-        const val constraintLayoutLib = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
-
-        //jUnit Android
-        const val jUnitAndroidLib = "androidx.test.ext:junit:${Versions.jUnitAndroid}"
-
-        //espress
-        const val espressoLib = "androidx.test.espresso:espresso-core:${Versions.espresso}"
-
         //ktx
         const val coreLib = "androidx.core:core-ktx:${Versions.core}"
         const val collectionLib = "androidx.collection:collection-ktx:${Versions.collection}"
-
-        //activity
-        const val activityKtxLib = "androidx.activity:activity-ktx:${Versions.activity}"
+        const val paletteKtxLib = "androidx.palette:palette-ktx:${Versions.palette}"
+        const val sqLiteKtxLib = "androidx.sqlite:sqlite-ktx:${Versions.sqlite}"
 
         //appcompat
         const val appcompatLib = "androidx.appcompat:appcompat:${Versions.appcompat}"
         const val appcompatResourcesLib = "androidx.appcompat:appcompat-resources:${Versions.appcompat}"
+
+        //activity
+        const val activityKtxLib = "androidx.activity:activity-ktx:${Versions.activity}"
+
+        //fragment
+        const val fragmentKtxLib = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+        const val fragmentTestingLib = "androidx.fragment:fragment-testing:${Versions.fragment}"
 
         //app start up
         const val appStartUpLib = "androidx.startup:startup-runtime:${Versions.appStartUp}"
@@ -28,83 +50,43 @@ object Libs {
         const val dataStorePrefLib = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
         const val dataStoreCoreLib = "androidx.datastore:datastore-core:${Versions.dataStore}"
 
-        //fragment
-        const val fragmentKtxLib = "androidx.fragment:fragment-ktx:${Versions.fragment}"
-        const val fragmentTestingLib = "androidx.fragment:fragment-testing:${Versions.fragment}"//Unused
-
         //lifecycle
         const val viewModelKtxLib = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
         const val liveDataKtxLib = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
         const val lifecycleRuntimeLib = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
         const val lifecycleCommonLib = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"//DefaultLifecycleObserver
-        const val viewModelSavedStateLib = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycle}"//Unused
-        const val lifecycleServiceLib = "androidx.lifecycle:lifecycle-service:${Versions.lifecycle}"//Unused
-        const val lifecycleProcessLib = "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}"//Unused
-        const val lifecycleReactiveStreamsLib = "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.lifecycle}"//Unused
-
-        //navigation
-        const val navRuntimeKtxLib = "androidx.navigation:navigation-runtime-ktx:${Versions.navigation}"//Unused
-        const val navFragmentKtxLib = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"//Unused
-        const val navUiKtxLib = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"//Unused
-        const val navDynamicFeaturesFragmentLib = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"//Unused
-        const val navTestingLib = "androidx.navigation:navigation-testing:${Versions.navigation}"//Unused
+        const val viewModelSavedStateLib = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycle}"
+        const val lifecycleServiceLib = "androidx.lifecycle:lifecycle-service:${Versions.lifecycle}"
+        const val lifecycleProcessLib = "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}"
+        const val lifecycleReactiveStreamsLib = "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.lifecycle}"
 
         //paging
         const val pagingRuntimeKtxLib = "androidx.paging:paging-runtime-ktx:${Versions.paging}"
-        const val pagingCommonKtxLib = "androidx.paging:paging-common-ktx:${Versions.paging}"
-        const val pagingGuavaLib = "androidx.paging:paging-guava:${Versions.paging}"//Unused
+        const val pagingGuavaLib = "androidx.paging:paging-guava:${Versions.paging}"
 
         //room
         const val roomRuntimeLib = "androidx.room:room-runtime:${Versions.room}"
         const val roomKtxLib = "androidx.room:room-ktx:${Versions.room}"
         const val roomCoroutinesLib = "androidx.room:room-coroutines:${Versions.room}"
         const val roomCompilerLib = "androidx.room:room-compiler:${Versions.room}"
-        const val roomTestingLib = "androidx.room:room-testing:${Versions.room}"//Unused
 
         //work manager
         const val workRunTimeKtxLib = "androidx.work:work-runtime-ktx:${Versions.work}"
-        const val workTestingKtxLib = "androidx.work:work-testing:${Versions.work}"
 
-        //palette
-        const val paletteKtxLib = "androidx.palette:palette-ktx:${Versions.palette}"
-
-        //sqlite
-        const val sqLiteKtxLib = "androidx.sqlite:sqlite-ktx:${Versions.sqlite}"
+        //navigation
+        const val navRuntimeKtxLib = "androidx.navigation:navigation-runtime-ktx:${Versions.navigation}"
+        const val navFragmentKtxLib = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+        const val navUiKtxLib = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"//Unused
+        const val navDynamicFeaturesFragmentLib = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
 
         //hilt
         const val hiltViewModelLib = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltInject}"
         const val hiltWorkManagerLib = "androidx.hilt:hilt-work:${Versions.hiltInject}"
         const val hiltCompilerLib = "androidx.hilt:hilt-compiler:${Versions.hiltInject}"
 
-    }
+        //constraintLayout
+        const val constraintLayoutLib = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
-    object Google{
-        //proto
-        const val protoLib = "com.google.protobuf:protobuf-javalite:${Versions.proto}"
-        const val protobufLib = "com.google.protobuf:protoc:${Versions.proto}"
-
-        //hilt
-        const val hiltLib = "com.google.dagger:hilt-android:${Versions.hilt}"
-        const val hiltCompilerLib = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
-
-        //material
-        const val materialLib = "com.google.android.material:material:${Versions.android}"
-
-        //gson
-        const val gsonLib = "com.google.code.gson:gson:${Versions.gson}"
-    }
-
-    //jUnit
-    const val jUnitLib = "junit:junit:${Versions.jUnit}"
-
-    object Jetbrains {
-        //jetBrains
-        const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.jetBrains}"
-
-        //coroutines
-        const val coroutinesCoreLib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-        const val coroutinesAndroidLib = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
-        const val coroutinesTestingLib = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     }
 
     object Squareup {
@@ -112,7 +94,6 @@ object Libs {
         const val okHttpLib = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
         const val okHttpMockWebServerLib = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
         const val okHttpLoggingInterceptorLib = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
-        const val okHttpMockWebServerTestingLib = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
 
         //okio
         const val okioLib = "com.squareup.okio:okio:${Versions.okio}"
@@ -124,24 +105,18 @@ object Libs {
     }
 
     object Koin {
-        //koin
         const val koinCoreLib = "org.koin:koin-core:${Versions.koin}"
         const val koinCoreExtLib = "org.koin:koin-core-ext:${Versions.koin}"
         const val koinScopeLib = "org.koin:koin-androidx-scope:${Versions.koin}"
         const val koinViewModelLib = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
         const val koinFragmentLib = "org.koin:koin-androidx-fragment:${Versions.koin}"
-        const val koinTestingLib = "org.koin:koin-test:${Versions.koin}"
     }
 
     object BumpTech {
-        //glide
         const val glideLib = "com.github.bumptech.glide:glide:${Versions.glide}"
         const val glideOkHttpIntegrationLib = "com.github.bumptech.glide:okhttp3-integration:${Versions.glide}"
         const val glideCompilerLib = "com.github.bumptech.glide:compiler:${Versions.glide}"
     }
-
-    //logger
-    const val loggerLib = "com.orhanobut:logger:${Versions.logger}"
 
     object ReactiveX {
         //rx java
@@ -153,7 +128,6 @@ object Libs {
         //rxkotlin
         const val rxKotlinLib = "io.reactivex.rxjava3:rxkotlin:${Versions.rxKotlin}"
     }
-
 
     object Jakewharton {
         //rxbinding
@@ -172,14 +146,52 @@ object Libs {
         const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
     }
 
-    //rx permission
+    //Logger
+    const val loggerLib = "com.orhanobut:logger:${Versions.logger}"
+
+    //RxPermission
     const val rxPermissionsLib = "com.github.tbruyelle:rxpermissions:${Versions.rxPermissions}"
 
-    //mock
-    const val mockitoLib = "org.mockito:mockito-core:${Versions.mockito}"
-
-    object Tool{
+    object Facebook {
         const val stethoLib = "com.facebook.stetho:stetho:${Versions.stetho}"
+    }
+
+    object Test {
+        //jUnit
+        const val jUnitLib = "junit:junit:${Versions.jUnit}"
+
+        //mock
+        const val mockitoLib = "org.mockito:mockito-core:${Versions.mockito}"
+
+        //coroutines
+        const val coroutinesTestingLib = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+
+        //paging
+        const val pagingCommonKtxLib = "androidx.paging:paging-common-ktx:${Versions.paging}"
+
+        //room
+        const val roomTestingLib = "androidx.room:room-testing:${Versions.room}"
+        //okhttp
+        const val okHttpMockWebServerTestingLib = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
+
+        //koin
+        const val koinTestingLib = "org.koin:koin-test:${Versions.koin}"
+
+    }
+
+    object AndroidTest{
+        //jUnit
+        const val jUnitAndroidLib = "androidx.test.ext:junit:${Versions.jUnitAndroid}"
+
+        //espresso
+        const val espressoLib = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+        //worker
+        const val workTestingKtxLib = "androidx.work:work-testing:${Versions.work}"
+
+        //navigation
+        const val navTestingLib = "androidx.navigation:navigation-testing:${Versions.navigation}"
+
     }
 
 }

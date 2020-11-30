@@ -8,13 +8,14 @@ object Plugins {
     const val application = "com.android.application"
 
     //data store - proto
-    const val protobuf = "com.google.protobuf"
+    const val protoBuf = "com.google.protobuf"
 
     object Kotlin {
         const val android = "android"
 
         //data binding kapt
         const val kapt = "kapt"
+
         const val extensions = "android.extensions"
     }
 }

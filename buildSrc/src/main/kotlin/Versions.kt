@@ -3,6 +3,9 @@ object Versions {
 
     const val jetBrains = "1.4.10"
 
+    //proto
+    const val protoBufGradlePlugin = "0.8.13"
+
     const val android = "1.2.1"
 
     //constraintLayout
@@ -31,8 +34,6 @@ object Versions {
     //data store
     const val dataStore = "1.0.0-alpha02"
 
-    //proto
-    const val protobufGradlePlugin = "0.8.13"
     const val proto = "3.10.0"
 
     //fragment

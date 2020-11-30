@@ -2,16 +2,20 @@ object Android {
 
     const val compileSdk = 30
     const val buildTools = "29.0.3"
-    const val ID = "edu.yujie.dependencies"
-    const val minSdk = 16
-    const val targetSdk = 30
-    const val versionCode = 1
-    const val versionName = "1.0"
-    const val isMultiDex = true//method count > 65536
-    const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+    //defaultConfig
+    object DefaultConfig {
+        const val ID = "edu.yujie.dependencies"
+        const val minSdk = 16
+        const val targetSdk = 30
+        const val versionCode = 1
+        const val versionName = "1.0"
+        const val isMultiDex = true// method count > 65536
+        const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 
     //buildTypes
-    object Release{
+    object Release {
         const val name = "release"
         const val isMinify = false
         const val proguardFileName = "proguard-android-optimize.txt"
@@ -21,6 +25,7 @@ object Android {
     //buildFeatures
     //databinding
     const val isSupportDataBinding = true
+
     //viewBinding
     const val isSupportViewBinding = true
 
