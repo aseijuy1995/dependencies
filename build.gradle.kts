@@ -8,6 +8,10 @@ buildscript {
         classpath(ClassPath.kotlin)
         //data store - proto
         classpath(ClassPath.protobuf)
+        //navigation
+        classpath(ClassPath.navigation)
+        //hilt
+        classpath(ClassPath.hilt)
     }
 }
 

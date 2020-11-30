@@ -87,6 +87,10 @@ object Libs {
         //constraintLayout
         const val constraintLayoutLib = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
+        //swipeRefreshLayoutLib
+        const val swipeRefreshLayoutLib = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}"
+
+
     }
 
     object Squareup {
@@ -146,6 +150,8 @@ object Libs {
         const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
     }
 
+    const val multidexLib = "com.android.support:multidex:${Versions.multidex}"
+
     //Logger
     const val loggerLib = "com.orhanobut:logger:${Versions.logger}"
 
@@ -157,11 +163,17 @@ object Libs {
     }
 
     object Test {
+        //core
+        const val coreLib = "androidx.test:core:${Versions.core}"
+
         //jUnit
         const val jUnitLib = "junit:junit:${Versions.jUnit}"
 
         //mock
         const val mockitoLib = "org.mockito:mockito-core:${Versions.mockito}"
+
+        //mockk
+        const val mockkLib = "io.mockk:mockk:${Versions.mockk}"
 
         //coroutines
         const val coroutinesTestingLib = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
@@ -171,6 +183,10 @@ object Libs {
 
         //room
         const val roomTestingLib = "androidx.room:room-testing:${Versions.room}"
+
+        //hilt
+        const val hiltTestLib = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
+
         //okhttp
         const val okHttpMockWebServerTestingLib = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
 
@@ -182,6 +198,9 @@ object Libs {
     object AndroidTest{
         //jUnit
         const val jUnitAndroidLib = "androidx.test.ext:junit:${Versions.jUnitAndroid}"
+
+        //mockk
+        const val mockkLib = "io.mockk:mockk-android:${Versions.hilt}"
 
         //espresso
         const val espressoLib = "androidx.test.espresso:espresso-core:${Versions.espresso}"

@@ -8,6 +8,9 @@ object Versions {
 
     const val android = "1.2.1"
 
+    //swipeRefreshLayout
+    const val swipeRefreshLayout = "1.1.0"
+
     //constraintLayout
     const val constraintLayout = "2.0.2"
 
@@ -46,10 +49,10 @@ object Versions {
     const val navigation = "2.3.1"
 
     //paging
-    const val paging = "2.1.2"
+    const val paging = "3.0.0-alpha07"
 
     //room
-    const val room = "2.2.5"
+    const val room = "2.3.0-alpha03"
 
     //work manager
     const val work = "2.4.0"
@@ -96,6 +99,9 @@ object Versions {
     //rxbinding
     const val rxBinding = "4.0.0"
 
+    //multidex
+    const val multidex = "1.0.3"
+
     //rx permission
     const val rxPermissions = "0.12"
 
@@ -104,6 +110,9 @@ object Versions {
 
     //mockito
     const val mockito = "3.3.0"
+
+    //mockk
+    const val mockk = "1.10.2"
 
     //hilt
     const val hilt = "2.28.3-alpha"

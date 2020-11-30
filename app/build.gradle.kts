@@ -23,6 +23,19 @@ android {
         versionName = Android.DefaultConfig.versionName
         multiDexEnabled = Android.DefaultConfig.isMultiDex
         testInstrumentationRunner = Android.DefaultConfig.testInstrumentationRunner
+        //        //java
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments += ["room.schemaLocation":
+//                                      "$projectDir/schemas".toString()]
+//            }
+//        }
+        //kotlin
+//        kapt {
+//            arguments {
+//                arg("room.schemaLocation", "$projectDir/schemas")
+//            }
+//        }
     }
     buildTypes {
         getByName(Android.Release.name) {
@@ -47,6 +60,12 @@ android {
             isIncludeAndroidResources = Android.isIncludeAndroidResources
         }
     }
+    //room
+//    sourceSets {
+//        getByName("androidTest") {
+//            assets.srcDirs(files(projectDir, "schemas"))
+//        }
+//    }
 }
 
 dependencies {
@@ -113,6 +132,8 @@ dependencies {
     kapt(Libs.AndroidX.hiltCompilerLib)
     //constraintLayout
     implementation(Libs.AndroidX.constraintLayoutLib)
+    //swipeRefreshLayoutLib
+    implementation(Libs.AndroidX.swipeRefreshLayoutLib)
     //Squareup
     //okhttp3
     implementation(Libs.Squareup.okHttpLib)
@@ -159,17 +180,22 @@ dependencies {
 //    implementation(Libs.rxPermissionsLib)
     //Facebook
     implementation(Libs.Facebook.stethoLib)//https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
+
     //Test
+    testImplementation(Libs.Test.coreLib)
     testImplementation(Libs.Test.jUnitLib)
     testImplementation(Libs.Test.mockitoLib)
+    testImplementation(Libs.Test.mockkLib)
     testImplementation(Libs.Test.coroutinesTestingLib)
     testImplementation(Libs.Test.pagingCommonKtxLib)
     testImplementation(Libs.Test.roomTestingLib)
+    testImplementation(Libs.Test.hiltTestLib)
     testImplementation(Libs.Test.okHttpMockWebServerTestingLib)
     testImplementation(Libs.Test.koinTestingLib)
 
     //AndroidTest
     androidTestImplementation(Libs.AndroidTest.jUnitAndroidLib)
+    androidTestImplementation(Libs.AndroidTest.mockkLib)
     androidTestImplementation(Libs.AndroidTest.espressoLib)
     androidTestImplementation(Libs.AndroidTest.workTestingKtxLib)
     androidTestImplementation(Libs.AndroidTest.navTestingLib)
