@@ -6,10 +6,10 @@ object Libs {
         //coroutines
         const val coroutinesCoreLib = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
         const val coroutinesAndroidLib = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
-
     }
 
     object Google {
+
         //material
         const val materialLib = "com.google.android.material:material:${Versions.android}"
 
@@ -23,6 +23,10 @@ object Libs {
         //hilt
         const val hiltLib = "com.google.dagger:hilt-android:${Versions.hilt}"
         const val hiltCompilerLib = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    }
+
+    object Android {
+        const val multidexLib = "com.android.support:multidex:${Versions.multidex}"
     }
 
     object AndroidX {
@@ -70,7 +74,7 @@ object Libs {
         const val roomCoroutinesLib = "androidx.room:room-coroutines:${Versions.room}"
         const val roomCompilerLib = "androidx.room:room-compiler:${Versions.room}"
 
-        //work manager
+        //workManager
         const val workRunTimeKtxLib = "androidx.work:work-runtime-ktx:${Versions.work}"
 
         //navigation
@@ -91,6 +95,59 @@ object Libs {
         const val swipeRefreshLayoutLib = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}"
 
 
+    }
+
+    object ReactiveX {
+        //rxJava
+        const val rxJavaLib = "io.reactivex.rxjava3:rxjava:${Versions.rxJava}"
+
+        //rxAndroid
+        const val rxAndroidLib = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroid}"
+
+        //rxKotlin
+        const val rxKotlinLib = "io.reactivex.rxjava3:rxkotlin:${Versions.rxKotlin}"
+    }
+
+    object Jakewharton {
+        //rxBinding
+        const val rxBindingLib = "com.jakewharton.rxbinding4:rxbinding:${Versions.rxBinding}"
+        const val rxBindingCoreLib = "com.jakewharton.rxbinding4:rxbinding-core:${Versions.rxBinding}"
+        const val rxBindingAppcompatLib = "com.jakewharton.rxbinding4:rxbinding-appcompat:${Versions.rxBinding}"
+        const val rxBindingDrawerLayoutLib = "com.jakewharton.rxbinding4:rxbinding-drawerlayout:${Versions.rxBinding}"
+        const val rxBindingLeanbackLib = "com.jakewharton.rxbinding4:rxbinding-leanback:${Versions.rxBinding}"//min 17
+        const val rxBindingRecyclerViewLib = "com.jakewharton.rxbinding4:rxbinding-recyclerview:${Versions.rxBinding}"
+        const val rxBindingSlidingPaneLayoutLib = "com.jakewharton.rxbinding4:rxbinding-slidingpanelayout:${Versions.rxBinding}"
+        const val rxBindingSwipereFreshLayoutLib = "com.jakewharton.rxbinding4:rxbinding-swiperefreshlayout:${Versions.rxBinding}"
+        const val rxBindingViewPagerLib = "com.jakewharton.rxbinding4:rxbinding-viewpager:${Versions.rxBinding}"
+        const val rxBindingViewPager2Lib = "com.jakewharton.rxbinding4:rxbinding-viewpager2:${Versions.rxBinding}"
+        const val rxBindingMaterialLib = "com.jakewharton.rxbinding4:rxbinding-material:${Versions.rxBinding}"
+
+        //rxRelay
+        const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
+    }
+
+    object Trello {
+        //rxLifecycle
+        const val rxLifecycleLib = "com.trello.rxlifecycle4:rxlifecycle:${Versions.rxLifecycle}"
+        const val rxLifecycleAndroidLib = "com.trello.rxlifecycle4:rxlifecycle-android:${Versions.rxLifecycle}"
+        const val rxLifecycleComponentsLib = "com.trello.rxlifecycle4:rxlifecycle-components:${Versions.rxLifecycle}"
+        const val rxLifecyclePreferenceLib = "com.trello.rxlifecycle4:rxlifecycle-components-preference:${Versions.rxLifecycle}"
+        const val rxLifecycleAndroidLifecycleLib = "com.trello.rxlifecycle4:rxlifecycle-android-lifecycle:${Versions.rxLifecycle}"
+        const val rxLifecycleKotlinLib = "com.trello.rxlifecycle4:rxlifecycle-kotlin:${Versions.rxLifecycle}"
+        const val rxLifecycleAndroidLifecycleKotlinLib = "com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:${Versions.rxLifecycle}"
+    }
+
+    object Tbruyelle {
+        //rxPermission
+        const val rxPermissionsLib = "com.github.tbruyelle:rxpermissions:${Versions.rxPermissions}"
+    }
+
+    object Ssseasonnn {
+        //rxDownload
+        const val rxDownloadLib = "com.github.ssseasonnn.RxDownload:rxdownload4:${Versions.rxDownload}"
+        const val rxDownloadManagerLib = "com.github.ssseasonnn.RxDownload:rxdownload4-manager:${Versions.rxDownload}"
+        const val rxDownloadNotificationLib = "com.github.ssseasonnn.RxDownload:rxdownload4-notification:${Versions.rxDownload}"
+        const val rxDownloadRecorderLib = "com.github.ssseasonnn.RxDownload:rxdownload4-recorder:${Versions.rxDownload}"
     }
 
     object Squareup {
@@ -122,41 +179,10 @@ object Libs {
         const val glideCompilerLib = "com.github.bumptech.glide:compiler:${Versions.glide}"
     }
 
-    object ReactiveX {
-        //rx java
-        const val rxJavaLib = "io.reactivex.rxjava3:rxjava:${Versions.rxJava}"
-
-        //rx android
-        const val rxAndroidLib = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroid}"
-
-        //rxkotlin
-        const val rxKotlinLib = "io.reactivex.rxjava3:rxkotlin:${Versions.rxKotlin}"
+    object Orhanobut {
+        //Logger
+        const val loggerLib = "com.orhanobut:logger:${Versions.logger}"
     }
-
-    object Jakewharton {
-        //rxbinding
-        const val rxBindingLib = "com.jakewharton.rxbinding4:rxbinding:${Versions.rxBinding}"
-        const val rxBindingCoreLib = "com.jakewharton.rxbinding4:rxbinding-core:${Versions.rxBinding}"
-        const val rxBindingAppcompatLib = "com.jakewharton.rxbinding4:rxbinding-appcompat:${Versions.rxBinding}"
-        const val rxBindingDrawerLayoutLib = "com.jakewharton.rxbinding4:rxbinding-drawerlayout:${Versions.rxBinding}"
-        const val rxBindingLeanbackLib = "com.jakewharton.rxbinding4:rxbinding-leanback:${Versions.rxBinding}"//min 17
-        const val rxBindingRecyclerViewLib = "com.jakewharton.rxbinding4:rxbinding-recyclerview:${Versions.rxBinding}"
-        const val rxBindingSlidingPaneLayoutLib = "com.jakewharton.rxbinding4:rxbinding-slidingpanelayout:${Versions.rxBinding}"
-        const val rxBindingSwipereFreshLayoutLib = "com.jakewharton.rxbinding4:rxbinding-swiperefreshlayout:${Versions.rxBinding}"
-        const val rxBindingViewPagerLib = "com.jakewharton.rxbinding4:rxbinding-viewpager:${Versions.rxBinding}"
-        const val rxBindingViewPager2Lib = "com.jakewharton.rxbinding4:rxbinding-viewpager2:${Versions.rxBinding}"
-
-        //rxrelay
-        const val rxRelayLib = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelay}"
-    }
-
-    const val multidexLib = "com.android.support:multidex:${Versions.multidex}"
-
-    //Logger
-    const val loggerLib = "com.orhanobut:logger:${Versions.logger}"
-
-    //RxPermission
-    const val rxPermissionsLib = "com.github.tbruyelle:rxpermissions:${Versions.rxPermissions}"
 
     object Facebook {
         const val stethoLib = "com.facebook.stetho:stetho:${Versions.stetho}"
@@ -195,7 +221,7 @@ object Libs {
 
     }
 
-    object AndroidTest{
+    object AndroidTest {
         //jUnit
         const val jUnitAndroidLib = "androidx.test.ext:junit:${Versions.jUnitAndroid}"
 

@@ -66,14 +66,18 @@ android {
 //            assets.srcDirs(files(projectDir, "schemas"))
 //        }
 //    }
+    packagingOptions {
+        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies {
     //Jetbrains
     implementation(Libs.Jetbrains.kotlinStdLib)
-    //coroutines
+    // coroutines
     implementation(Libs.Jetbrains.coroutinesCoreLib)
     implementation(Libs.Jetbrains.coroutinesAndroidLib)
+    //--------------------------------------------------------------------------------
     //Google
     implementation(Libs.Google.materialLib)
     //gson
@@ -83,26 +87,30 @@ dependencies {
     //hilt
     implementation(Libs.Google.hiltLib)
     kapt(Libs.Google.hiltCompilerLib)
+    //--------------------------------------------------------------------------------
+    //Android
+    implementation(Libs.Android.multidexLib)
+    //--------------------------------------------------------------------------------
     //AndroidX
-    //ktx
+    // ktx
     implementation(Libs.AndroidX.coreLib)
     implementation(Libs.AndroidX.collectionLib)
     implementation(Libs.AndroidX.paletteKtxLib)
     implementation(Libs.AndroidX.sqLiteKtxLib)
-    //appcompat
+    // appcompat
     implementation(Libs.AndroidX.appcompatLib)
     implementation(Libs.AndroidX.appcompatResourcesLib)
-    //activity
+    // activity
     implementation(Libs.AndroidX.activityKtxLib)
-    //fragment
+    // fragment
     implementation(Libs.AndroidX.fragmentKtxLib)
     debugImplementation(Libs.AndroidX.fragmentTestingLib)
-    //app start up
+    // app start up
     implementation(Libs.AndroidX.appStartUpLib)
-    //data store
+    // data store
     implementation(Libs.AndroidX.dataStorePrefLib)
     implementation(Libs.AndroidX.dataStoreCoreLib)
-    //lifecycle
+    // lifecycle
     implementation(Libs.AndroidX.viewModelKtxLib)
     implementation(Libs.AndroidX.liveDataKtxLib)
     implementation(Libs.AndroidX.lifecycleRuntimeLib)
@@ -111,76 +119,99 @@ dependencies {
     implementation(Libs.AndroidX.lifecycleServiceLib)
     implementation(Libs.AndroidX.lifecycleProcessLib)
     implementation(Libs.AndroidX.lifecycleReactiveStreamsLib)
-    //paging
+    // paging
     implementation(Libs.AndroidX.pagingRuntimeKtxLib)
 //    implementation(Libs.pagingGuavaLib)
-    //room
+    // room
     implementation(Libs.AndroidX.roomRuntimeLib)
     implementation(Libs.AndroidX.roomKtxLib)
 //    implementation(Libs.AndroidX.roomCoroutinesLib)
     kapt(Libs.AndroidX.roomCompilerLib)
-    //work manager
+    // work manager
     implementation(Libs.AndroidX.workRunTimeKtxLib)
-    //navigation
+    // navigation
     implementation(Libs.AndroidX.navRuntimeKtxLib)
     implementation(Libs.AndroidX.navFragmentKtxLib)
     implementation(Libs.AndroidX.navUiKtxLib)
     implementation(Libs.AndroidX.navDynamicFeaturesFragmentLib)
-    //hilt - viewModel & workManager
+    // hilt - viewModel & workManager
     implementation(Libs.AndroidX.hiltViewModelLib)
     implementation(Libs.AndroidX.hiltWorkManagerLib)
     kapt(Libs.AndroidX.hiltCompilerLib)
-    //constraintLayout
+    // constraintLayout
     implementation(Libs.AndroidX.constraintLayoutLib)
-    //swipeRefreshLayoutLib
+    // swipeRefreshLayoutLib
     implementation(Libs.AndroidX.swipeRefreshLayoutLib)
+    //--------------------------------------------------------------------------------
+    //ReactiveX
+    // rxJava
+    implementation(Libs.ReactiveX.rxJavaLib)
+    // rxAndroid
+    implementation(Libs.ReactiveX.rxAndroidLib)
+    // rxKotlin
+    implementation(Libs.ReactiveX.rxKotlinLib)
+    //--------------------------------------------------------------------------------
+    //RxBinding
+    implementation(Libs.Jakewharton.rxBindingLib)
+    implementation(Libs.Jakewharton.rxBindingCoreLib)
+    implementation(Libs.Jakewharton.rxBindingAppcompatLib)
+    implementation(Libs.Jakewharton.rxBindingDrawerLayoutLib)
+    implementation(Libs.Jakewharton.rxBindingLeanbackLib)//min17
+    implementation(Libs.Jakewharton.rxBindingRecyclerViewLib)
+    implementation(Libs.Jakewharton.rxBindingSlidingPaneLayoutLib)
+    implementation(Libs.Jakewharton.rxBindingSwipereFreshLayoutLib)
+//    implementation(Libs.Jakewharton.rxBindingViewPagerLib)
+    implementation(Libs.Jakewharton.rxBindingViewPager2Lib)
+    implementation(Libs.Jakewharton.rxBindingMaterialLib)
+    //RxRelay
+    implementation(Libs.Jakewharton.rxRelayLib)
+    //--------------------------------------------------------------------------------
+    //RxLifecycle
+    implementation(Libs.Trello.rxLifecycleLib)
+    implementation(Libs.Trello.rxLifecycleAndroidLib)
+    implementation(Libs.Trello.rxLifecycleComponentsLib)
+    implementation(Libs.Trello.rxLifecyclePreferenceLib)
+    implementation(Libs.Trello.rxLifecycleAndroidLifecycleLib)
+    implementation(Libs.Trello.rxLifecycleKotlinLib)
+    implementation(Libs.Trello.rxLifecycleAndroidLifecycleKotlinLib)
+    //--------------------------------------------------------------------------------
+    //RxPermission
+    implementation(Libs.Tbruyelle.rxPermissionsLib)
+    //--------------------------------------------------------------------------------
+    //RxDownload
+    implementation(Libs.Ssseasonnn.rxDownloadLib)
+    implementation(Libs.Ssseasonnn.rxDownloadManagerLib)
+    implementation(Libs.Ssseasonnn.rxDownloadNotificationLib)
+    implementation(Libs.Ssseasonnn.rxDownloadRecorderLib)
+    //--------------------------------------------------------------------------------
     //Squareup
-    //okhttp3
+    // okhttp3
     implementation(Libs.Squareup.okHttpLib)
     implementation(Libs.Squareup.okHttpMockWebServerLib)
     implementation(Libs.Squareup.okHttpLoggingInterceptorLib)
-    //okio
+    // okio
     implementation(Libs.Squareup.okioLib)
-    //retrofit
+    // retrofit
     implementation(Libs.Squareup.retrofitLib)
     implementation(Libs.Squareup.retrofitConverterGsonLib)
     implementation(Libs.Squareup.retrofitMockLib)
+    //--------------------------------------------------------------------------------
     //Koin
     implementation(Libs.Koin.koinCoreLib)
     implementation(Libs.Koin.koinCoreExtLib)
     implementation(Libs.Koin.koinScopeLib)
     implementation(Libs.Koin.koinViewModelLib)
     implementation(Libs.Koin.koinFragmentLib)
+    //--------------------------------------------------------------------------------
     //BumpTech
     implementation(Libs.BumpTech.glideLib)
     implementation(Libs.BumpTech.glideOkHttpIntegrationLib)
     kapt(Libs.BumpTech.glideCompilerLib)
-    //RxJava
-    implementation(Libs.ReactiveX.rxJavaLib)
-    //RxAndroid
-    implementation(Libs.ReactiveX.rxAndroidLib)
-    //RxKotlin
-    implementation(Libs.ReactiveX.rxKotlinLib)
-    //RxBinding
-    implementation(Libs.Jakewharton.rxBindingLib)
-    implementation(Libs.Jakewharton.rxBindingCoreLib)
-    implementation(Libs.Jakewharton.rxBindingAppcompatLib)
-    implementation(Libs.Jakewharton.rxBindingDrawerLayoutLib)
-//    implementation(Libs.Jakewharton.rxBindingLeanbackLib)//min17
-    implementation(Libs.Jakewharton.rxBindingRecyclerViewLib)
-    implementation(Libs.Jakewharton.rxBindingSlidingPaneLayoutLib)
-    implementation(Libs.Jakewharton.rxBindingSwipereFreshLayoutLib)
-    implementation(Libs.Jakewharton.rxBindingViewPagerLib)
-    implementation(Libs.Jakewharton.rxBindingViewPager2Lib)
-    //RxRelay
-    implementation(Libs.Jakewharton.rxRelayLib)
+    //--------------------------------------------------------------------------------
     //logger
-    implementation(Libs.loggerLib)
-    //RxPermission
-//    implementation(Libs.rxPermissionsLib)
+    implementation(Libs.Orhanobut.loggerLib)
     //Facebook
     implementation(Libs.Facebook.stethoLib)//https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
-
     //Test
     testImplementation(Libs.Test.coreLib)
     testImplementation(Libs.Test.jUnitLib)
@@ -192,7 +223,6 @@ dependencies {
     testImplementation(Libs.Test.hiltTestLib)
     testImplementation(Libs.Test.okHttpMockWebServerTestingLib)
     testImplementation(Libs.Test.koinTestingLib)
-
     //AndroidTest
     androidTestImplementation(Libs.AndroidTest.jUnitAndroidLib)
     androidTestImplementation(Libs.AndroidTest.mockkLib)

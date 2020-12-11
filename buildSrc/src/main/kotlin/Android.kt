@@ -6,7 +6,7 @@ object Android {
     //defaultConfig
     object DefaultConfig {
         const val ID = "edu.yujie.dependencies"
-        const val minSdk = 16
+        const val minSdk = 17
         const val targetSdk = 30
         const val versionCode = 1
         const val versionName = "1.0"

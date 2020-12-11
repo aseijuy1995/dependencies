@@ -1,35 +1,51 @@
 object Versions {
-    const val tools = "4.1.0"
+    //ClassPath
 
-    const val jetBrains = "1.4.10"
+    const val tools = "4.1.0"
 
     //proto
     const val protoBufGradlePlugin = "0.8.13"
 
+    //hilt
+    const val hilt = "2.28.3-alpha"
+
+    //--------------------------------------------------------------------------------
+
+    const val jetBrains = "1.4.10"
+
+    //coroutines
+    const val coroutines = "1.3.9"
+
+    //--------------------------------------------------------------------------------
+
     const val android = "1.2.1"
 
-    //swipeRefreshLayout
-    const val swipeRefreshLayout = "1.1.0"
+    //gson
+    const val gson = "2.8.6"
 
-    //constraintLayout
-    const val constraintLayout = "2.0.2"
+    const val proto = "3.10.0"
 
-    //jUnit
-    const val jUnit = "4.+"
+    //--------------------------------------------------------------------------------
 
-    const val jUnitAndroid = "1.1.2"
+    //multidex
+    const val multidex = "1.0.3"
 
-    const val espresso = "3.3.0"
+    //--------------------------------------------------------------------------------
 
     //ktx
     const val core = "1.3.2"
     const val collection = "1.1.0"
+    const val palette = "1.0.0"
+    const val sqlite = "2.1.0"
+
+    //appcompat
+    const val appcompat = "1.2.0"
 
     //activity
     const val activity = "1.1.0"
 
-    //appcompat
-    const val appcompat = "1.2.0"
+    //fragment
+    const val fragment = "1.2.5"
 
     //app start up
     const val appStartUp = "1.0.0-rc01"
@@ -37,16 +53,8 @@ object Versions {
     //data store
     const val dataStore = "1.0.0-alpha02"
 
-    const val proto = "3.10.0"
-
-    //fragment
-    const val fragment = "1.2.5"
-
     //lifecycle
     const val lifecycle = "2.2.0"
-
-    //navigation
-    const val navigation = "2.3.1"
 
     //paging
     const val paging = "3.0.0-alpha07"
@@ -54,17 +62,56 @@ object Versions {
     //room
     const val room = "2.3.0-alpha03"
 
-    //work manager
+    //workManager
     const val work = "2.4.0"
 
-    //palette
-    const val palette = "1.0.0"
+    //navigation
+    const val navigation = "2.3.1"
 
-    //sqlite
-    const val sqlite = "2.1.0"
+    //hilt
+    const val hiltInject = "1.0.0-alpha02"
 
-    //coroutines
-    const val coroutines = "1.3.9"
+    //constraintLayout
+    const val constraintLayout = "2.0.2"
+
+    //swipeRefreshLayout
+    const val swipeRefreshLayout = "1.1.0"
+
+    //--------------------------------------------------------------------------------
+
+    //rxJava
+    const val rxJava = "3.0.7"
+
+    //rxAndroid
+    const val rxAndroid = "3.0.0"
+
+    //rxKotlin
+    const val rxKotlin = "3.0.0"
+
+    //--------------------------------------------------------------------------------
+
+    //rxBinding
+    const val rxBinding = "4.0.0"
+
+    //rxRelay
+    const val rxRelay = "3.0.0"
+
+    //--------------------------------------------------------------------------------
+
+    //rxLifecycle
+    const val rxLifecycle = "4.0.2"
+
+    //--------------------------------------------------------------------------------
+
+    //rxPermissions
+    const val rxPermissions = "0.12"
+
+    //--------------------------------------------------------------------------------
+
+    //rxDownload
+    const val rxDownload = "1.0.9"
+
+    //--------------------------------------------------------------------------------
 
     //okhttp3
     const val okhttp = "4.9.0"
@@ -75,38 +122,32 @@ object Versions {
     //retrofit
     const val retrofit = "2.9.0"
 
-    //gson
-    const val gson = "2.8.6"
+    //--------------------------------------------------------------------------------
 
     //koin
     const val koin = "2.1.6"
 
+    //--------------------------------------------------------------------------------
+
     //glide
     const val glide = "4.11.0"
+
+    //--------------------------------------------------------------------------------
 
     //logger
     const val logger = "2.2.0"
 
-    //rx java
-    const val rxJava = "3.0.7"
+    //--------------------------------------------------------------------------------
 
-    //rx android
-    const val rxAndroid = "3.0.0"
+    //stetho
+    const val stetho = "1.5.1"
 
-    //rxkotlin
-    const val rxKotlin = "3.0.0"
+    //--------------------------------------------------------------------------------
 
-    //rxbinding
-    const val rxBinding = "4.0.0"
+    //jUnit
+    const val jUnit = "4.+"
 
-    //multidex
-    const val multidex = "1.0.3"
-
-    //rx permission
-    const val rxPermissions = "0.12"
-
-    //rxrelay
-    const val rxRelay = "3.0.0"
+    const val jUnitAndroid = "1.1.2"
 
     //mockito
     const val mockito = "3.3.0"
@@ -114,12 +155,6 @@ object Versions {
     //mockk
     const val mockk = "1.10.2"
 
-    //hilt
-    const val hilt = "2.28.3-alpha"
-
-    const val hiltInject = "1.0.0-alpha02"
-
-    //stetho
-    const val stetho = "1.5.1"
+    const val espresso = "3.3.0"
 
 }
