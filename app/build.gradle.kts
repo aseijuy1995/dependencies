@@ -212,6 +212,16 @@ dependencies {
     implementation(Libs.Orhanobut.loggerLib)
     //Facebook
     implementation(Libs.Facebook.stethoLib)//https://www.himmy.cn/2019/07/06/android-%E4%BD%BF%E7%94%A8stetho%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bsqlite%E6%95%B0%E6%8D%AE%E5%BA%93/
+    implementation(Libs.Facebook.shimmerLib)
+    //upDateApp
+    implementation(Libs.Qianwen.updateAppJavaLib)
+    implementation(Libs.Qianwen.updateAppKotlinLib)
+    //bottomnavigationview
+    implementation(Libs.Joery.animatedbottombarLib)
+    implementation(Libs.Joery.animatedbottombarLib)
+    //ethanhua
+    implementation(Libs.Ethanhua.skeletonLib)
+    implementation(Libs.Ethanhua.shimmerLayoutLib)
     //Test
     testImplementation(Libs.Test.coreLib)
     testImplementation(Libs.Test.jUnitLib)

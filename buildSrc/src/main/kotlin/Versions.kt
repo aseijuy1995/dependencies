@@ -139,8 +139,27 @@ object Versions {
 
     //--------------------------------------------------------------------------------
 
-    //stetho
+    //facebook
     const val stetho = "1.5.1"
+    const val shimmer = "0.5.0"
+
+    //--------------------------------------------------------------------------------
+
+    //updateApp
+    const val updateAppJava = "3.5.2"
+
+    const val updateAppKotlin = "1.2.3"
+
+    //--------------------------------------------------------------------------------
+
+    //animatedbottombar
+    const val animatedbottombar = "1.0.9"
+
+    //--------------------------------------------------------------------------------
+
+    //Ethanhua
+    const val skeleton = "1.1.2"
+    const val shimmerLayout = "2.1.0"
 
     //--------------------------------------------------------------------------------
 
@@ -156,5 +175,4 @@ object Versions {
     const val mockk = "1.10.2"
 
     const val espresso = "3.3.0"
-
 }

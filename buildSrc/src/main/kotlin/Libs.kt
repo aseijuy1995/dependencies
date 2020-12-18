@@ -186,6 +186,21 @@ object Libs {
 
     object Facebook {
         const val stethoLib = "com.facebook.stetho:stetho:${Versions.stetho}"
+        const val shimmerLib = "com.facebook.shimmer:shimmer:${Versions.shimmer}"
+    }
+
+    object Qianwen {
+        const val updateAppJavaLib = "com.qianwen:update-app:${Versions.updateAppJava}"
+        const val updateAppKotlinLib = "com.qianwen:update-app-kotlin:${Versions.updateAppKotlin}"
+    }
+
+    object Joery {
+        const val animatedbottombarLib = "nl.joery.animatedbottombar:library:${Versions.animatedbottombar}"
+    }
+
+    object Ethanhua {
+        const val skeletonLib = "com.ethanhua:skeleton:${Versions.skeleton}"
+        const val shimmerLayoutLib = "io.supercharge:shimmerlayout:${Versions.shimmerLayout}"
     }
 
     object Test {
@@ -238,5 +253,4 @@ object Libs {
         const val navTestingLib = "androidx.navigation:navigation-testing:${Versions.navigation}"
 
     }
-
 }
